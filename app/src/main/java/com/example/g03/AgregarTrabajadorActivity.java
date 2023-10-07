@@ -14,11 +14,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.g03.models.TrabajadorHora;
 import com.example.g03.models.TrabajadorTiempoCompleto;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class AgregarTrabajadorActivity extends AppCompatActivity {
     Button btnAgregar;
     EditText edtSalario, edtCodigo, edtNombre, edtApellido, edtEdad, edtValor, edtHora;
-    TextView tvSalario, tvCodigo, tvNombre, tvApellido, tvEdad, tvValor, tvHora;
+    private TextInputLayout edtSal, edtValr, edtHor;
     private Bundle bundle;
     private int idEleccion;
 
@@ -30,31 +31,29 @@ public class AgregarTrabajadorActivity extends AppCompatActivity {
         btnAgregar = findViewById(R.id.btnAgregar);
 
         edtSalario = findViewById(R.id.edtSalario);
-        edtCodigo = findViewById(R.id.edtCodigo);
+        edtCodigo = findViewById(R.id.edtID);
         edtNombre = findViewById(R.id.edtNombre);
         edtApellido = findViewById(R.id.edtApellido);
         edtEdad = findViewById(R.id.edtEdad);
         edtValor = findViewById(R.id.edtValor);
         edtHora = findViewById(R.id.edtHora);
 
-        tvSalario = findViewById(R.id.tvSalario);
-        tvValor = findViewById(R.id.tvValor);
-        tvHora= findViewById(R.id.tvHora);
+        edtSal = findViewById(R.id.txtLyoutSalario);
+        edtValr = findViewById(R.id.txtLyoutValue);
+        edtHor= findViewById(R.id.txtLyoutHour);
 
         bundle = getIntent().getExtras();
         idEleccion = bundle.getInt("tipoEleccion");
 
         if(idEleccion == 1){
             // Trabajador hora
-            tvSalario.setVisibility(View.GONE);
-            edtSalario.setVisibility(View.GONE);
+           edtSal.setVisibility(View.GONE);
+
 
         }else{
             // Tiempo completo
-            tvValor.setVisibility(View.GONE);
-            edtValor.setVisibility(View.GONE);
-            tvHora.setVisibility(View.GONE);
-            edtHora.setVisibility(View.GONE);
+            edtValr.setVisibility(View.GONE);
+            edtHor.setVisibility(View.GONE);
 
         }
 
