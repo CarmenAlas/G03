@@ -19,8 +19,6 @@ import java.util.ArrayList;
 public class TrabajadorAdapter extends RecyclerView.Adapter<ViewHolderTrabajador>{
     private ArrayList<Trabajador> datos;
 
-
-
     public TrabajadorAdapter(ArrayList<Trabajador> datos) {
         this.datos = datos;
     }
